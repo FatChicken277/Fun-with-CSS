@@ -1,0 +1,103 @@
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    max-width: 5%;
+    margin-top: 1rem;
+}
+
+input {
+    display: none;
+}
+
+input:checked ~ .menu-item {
+    visibility: visible;
+    opacity: 1;
+}
+
+input:checked ~ .menu-open-button {
+    transform: scale(0.8);
+}
+
+input:checked ~ .menu-open-button:hover {
+    border: 1px solid #a82626;
+    background-color: white;
+}
+
+input:checked ~ .menu-open-button:hover .menu-line {
+    background-color: #a82626;
+}
+
+input:checked ~ .menu-open-button .menu-line-1 {
+    transform: scale(0.8) rotate(45deg);
+    position: absolute;
+}
+input:checked ~ .menu-open-button .menu-line-2 {
+    transform: scale(0.8) rotate(-45deg);
+    position: absolute;
+}
+input:checked ~ .menu-open-button .menu-line-3 {
+    display: none;
+}
+
+.menu-open-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    height: 50px;
+    width: 50px;
+    margin-bottom: .5rem;
+
+    border: 1px solid white;
+    border-radius: 100%;
+
+    transition: transform .1s;
+
+    background-color: #a82626;
+}
+
+.menu-open-button:hover {
+    transform: scale(1.1);
+}
+
+.menu-open-button .menu-line {
+    height: 2px;
+    width: 25px;
+
+    margin: 2px;
+    transition: transform .2s;
+
+    background-color: white;
+}
+
+.menu-item {
+    display: flex;
+    visibility: hidden;
+    opacity: 0;
+
+    height: 40px;
+    width: 40px;
+    margin-bottom: 2px;
+    font-size: 12px;
+
+    border: 1px solid white;
+    border-radius: 100%;
+
+    justify-content: center;
+    align-items: center;
+
+    transition: opacity 0.2s ease-in-out;
+
+    color: white;
+    background-color: #a82626;
+}
+
+.menu-item:hover {
+    border: 1px solid #a82626;
+
+    color: #a82626;
+    background-color: white;
+}
